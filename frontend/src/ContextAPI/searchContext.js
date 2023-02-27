@@ -14,7 +14,7 @@ export function SearchProvider({ children }) {
       setIsLoading(true);
 
       try {
-        const response = await fetch(`https://agify.io/?name=${query}&country_id=EU`, {
+        const response = await fetch(`http://localhost:4000/proxy/?name=${query}&country_id=EU`, {
           mode: 'cors'
         });
         const data = await response.json();

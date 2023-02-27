@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend implementation for Buutti full stack task",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"cd ../frontend && npm start\"",
+    "server": "nodemon app.js"
+  },
+  "author": "Venla Jokikokko",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "concurrently": "^7.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "mongoose": "^6.7.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
