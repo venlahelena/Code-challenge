@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { SearchContext } from '../Context/SearchContext';
-import { Table } from 'semantic-ui-react';
+import React, { useContext } from "react";
+import { SearchContext } from "../ContextAPI/SearchContext";
+import { Table } from "semantic-ui-react";
 
 const SearchResult = () => {
   const { loading, results } = useContext(SearchContext);
