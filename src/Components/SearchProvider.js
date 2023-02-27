@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SearchContext } from './searchContext';
+import { SearchContext } from '../ContextAPI/searchContext';
 
 function SearchProvider(props) {
   const [searchQuery, setSearchQuery] = useState('');

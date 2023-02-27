@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { SearchContext } from '../ContextAPI/searchContext';
+import { useContext } from "react";
+import { SearchContext } from "../ContextAPI/searchContext";
 
 function SearchResults() {
   const { searchQuery, data } = useContext(SearchContext);
@@ -8,7 +8,7 @@ function SearchResults() {
     return <div>Please enter a search query</div>;
   }
 
-  if (!data.length) {
+  if (!data || !data.length) { // add a check for data existence
     return <div>No search results found</div>;
   }
 

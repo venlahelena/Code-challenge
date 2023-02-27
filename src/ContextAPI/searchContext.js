@@ -9,19 +9,18 @@ export function SearchProvider(props) {
 useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await (`https://agify.io/?name=${searchQuery}&country_id=EU`, {
-            mode: 'no-cors'
-          });
-          const data = await response.json();
-          console.log(data);
-          setData(JSON.parse(data));
+        const response = await fetch(`https://agify.io/?name=${searchQuery}&country_id=EU`, {
+          mode: "cors" 
+        });
+        const data = await response.json();
+        console.log(data);
+        setData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-  
     fetchData();
-  });
+  }, [searchQuery]);
 
   return (
     <SearchContext.Provider value={{ searchQuery, setSearchQuery, data }}>

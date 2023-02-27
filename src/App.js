@@ -1,12 +1,15 @@
 import React from 'react';
-import SearchBar from './Components/Search';
+import Search from './Components/Search';
 import SearchResults from './Components/SearchResult';
+import SearchProvider from './Components/SearchProvider';
 
 function App() {
   return (
       <div className="App">
-        <SearchBar />
-        <SearchResults />
+        <SearchProvider>
+          <Search />
+          <SearchResults />
+      </SearchProvider>
       </div>
   );
 }
