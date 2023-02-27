@@ -1,46 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { SearchContext } from '../ContextAPI/searchContext';
 
 function Search() {
-  const { searchQuery, setSearchQuery, searchResults, setSearchResults } = useContext(SearchContext);
-  const [isLoading, setIsLoading] = useState(false);
+  const { searchQuery, setSearchQuery, search, isLoading } = useContext(SearchContext);
 
-  const handleInputChange = async (event) => {
-    const query = event.target.value;
-    setSearchQuery(query);
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
-    if (query.length > 2) {
-      setIsLoading(true);
-
-      try {
-        const response = await fetch(`https://agify.io/?name=${query}&country_id=EU`, {
-          mode: 'no-cors'
-        });
-        const data = await response.json();
-        console.log(response);
-        console.log(data);
-
-        setSearchResults([{ name: query, age: data.age }]);
-      } catch (error) {
-        console.error(error);
-      }
-
-      setIsLoading(false);
-    } else {
-      setSearchResults([]);
-    }
+  const handleSearch = () => {
+    search(searchQuery);
   };
 
   return (
     <div>
       <input type="text" placeholder="Search..." value={searchQuery} onChange={handleInputChange} />
+      <button onClick={handleSearch}>Search</button>
       {isLoading ? <p>Loading...</p> : null}
-      {searchResults && searchResults.map(result => (
-        <div key={result.name}>
-          <p>Name: {result.name}</p>
-          <p>Age: {result.age}</p>
-        </div>
-      ))}
     </div>
   );
 }

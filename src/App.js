@@ -1,16 +1,14 @@
 import React from 'react';
+import { SearchProvider } from './ContextAPI/searchContext';
 import Search from './Components/Search';
-import SearchResults from './Components/SearchResult';
-import SearchProvider from './Components/SearchProvider';
+import SearchResult from './Components/SearchResult';
 
 function App() {
   return (
-      <div className="App">
-        <SearchProvider>
-          <Search />
-          <SearchResults />
-      </SearchProvider>
-      </div>
+    <SearchProvider>
+      <Search />
+      <SearchResult />
+    </SearchProvider>
   );
 }
 
