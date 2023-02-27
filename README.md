@@ -1,3 +1,7 @@
+# Age Search: Predict the Age of a Name
+
+This application uses https://agify.io/ as its API. Agify.io predicts the age of a person given their name. Use the API for analytics, ad segmentation, demographic statistics, etc. However, we are only able to predict the age of the person in this application. The project was done as part of a code challenge.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -30,7 +30,7 @@ const Search = () => {
           onChange={(e) => setNames(e.target.value)}
         />
       </Form.Field>
-      <button class="fluid ui secondary button">Search</button>
+      <button className="fluid ui secondary button">Search</button>
     </Form>
   );
 };
